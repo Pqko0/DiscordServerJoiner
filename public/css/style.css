@@ -1,0 +1,16 @@
+.btn-primary  {
+    background-color: rgba(115, 0, 255, 0.6);
+    border: rgba(115, 0, 255, 1);
+}
+
+.btn-primary:hover {
+    background-color: rgba(115, 0, 255, 0.8);
+}
+
+.btn-primary:hover::before {
+    background-color: rgba(115, 0, 255, 0.9);
+}
+
+.btn-primary::after {
+    background-color: rgba(115, 0, 255, 1);
+}

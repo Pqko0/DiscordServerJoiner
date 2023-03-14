@@ -1,0 +1,14 @@
+{
+  "client_id": "",
+  "client_secret": "",
+  "token": "",
+  "joinGuildID": "",
+  "guildRoleID": "",
+  "logsWebhook": "",
+  "production": true,
+  "prodHostname": "",
+  "prodRedirect": "",
+  "devRedirect": "",
+  "prodOAuth2": "",
+  "devOAuth2": ""
+}
