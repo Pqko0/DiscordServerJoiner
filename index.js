@@ -3,13 +3,18 @@ const { client_id, client_secret, token, production, prodHostname, prodRedirect,
 const redirectURL = production ? prodRedirect : devRedirect
 const OAuth2URL = production ? prodOAuth2 : devOAuth2
 
-const PqkoDiscord = require("pqko-discord")
-const pqko = new PqkoDiscord.SlashCommands(token, client_id, client_secret)
-const OAuth2 = new PqkoDiscord.OAuth2(client_id, client_secret, token, redirectURL)
-const client = pqko.Client;
-
-const { WebhookClient, EmbedBuilder, ActivityType, } = require("discord.js")
+const { Client, GatewayIntentBits, WebhookClient, EmbedBuilder, ActivityType } = require("discord.js")
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildInvites,
+    ]
+})
 const logs = new WebhookClient({ url : logsWebhook })
+
+const PqkoDiscord = require("pqko-discord")
+const pqko = new PqkoDiscord.SlashCommands(token, client_id, client_secret, client)
 
 /**
  * 
